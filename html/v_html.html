@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础</title>
+</head>
+
+<body>
+<div id="v_html">
+  <h2 v-html="message"></h2>
+  <h2 v-text="message"></h2>
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var v_html = new Vue({
+    el:"#v_html",
+
+    data:{
+      //message:"我自己"
+      message:"<a href='http://www.baidu.com'>百度一下</a>"
+    }
+  })
+</script>
+</body>
+
+</html>

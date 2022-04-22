@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>v_on补充</title>
+</head>
+<body>
+<div id="app">
+<!--<input type="button" value="点击" @click="doIt(666,888)">-->
+  <input type="text" @keyup.enter="sayHi">
+  <input type="button" value="点击" @click="sayHi">
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  var app =new Vue({
+    el:"#app",
+    methods: {
+      doIt: function (p1,p2) {
+        console.log("做it");
+        console.log(p1);
+        console.log(p2);
+      },
+      sayHi:function () {
+        alert("吃了没,哈马比")
+      }
+    },
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-text指令</title>
+</head>
+
+<body>
+<div id="v_text">
+  <h2 v-text="message+'啊啊'">乌拉乌拉</h2>
+  <h2 v-text="school+'啊啊啊'">呜啊还能</h2>
+  <h2>{{ message +'啊啊啊啊'}}武汉</h2>
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var v_text = new Vue({
+    el: "#v_text",
+    data:{
+      message:"我自己",
+      school:"武汉软件工程职业学院"
+    }
+  })
+</script>
+</body>
+
+</html>

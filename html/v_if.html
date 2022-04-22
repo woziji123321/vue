@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>v_if</title>
+</head>
+<body>
+<div id="app">
+  <p v-if="isShow">你是大傻逼</p>
+  <p v-show="isShow">你是大大大傻逼</p>
+  <input type="button" value="你是大傻逼" @click="toggleIsShow">
+  <h1 v-if="temperature>=35">热死了</h1>
+</div>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:"#app",
+    data:{
+      isShow:false,
+      temperature:15
+    },
+    methods:{
+      toggleIsShow:function () {
+        this.isShow = !this.isShow;
+      }
+    }
+  })
+</script>
+</body>
+</html>

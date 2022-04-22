@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>v_for</title>
+</head>
+<body>
+<div id="app">
+  <input type="button" value="添加数据" @click="add">
+  <input type="button" value="移除数据" @click="remove">
+<ul>
+  <li v-for="(item,index) in arr" :title="item">
+    {{ index+1 }}你好:{{ item }}
+  </li>
+</ul>
+  <h2 v-for="it in sb" v-bind:title="it.name">
+    {{ it.name }}
+  </h2>
+</div>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el:"#app",
+    data:{
+      arr:[1,2,3,4,5],
+      sb:[
+        {name: "你是傻逼"},
+        {name: "傻逼是你"}
+      ]
+    },
+    methods:{
+      add:function () {
+        this.sb.push({name: "你是大大大傻逼"})
+      },
+      remove:function () {
+        this.sb.shift();
+      }
+    }
+  })
+</script>
+</body>
+</html>
